@@ -1,0 +1,15 @@
+public class ComputerParts{
+	public static void main(String args[]) 	{
+	
+		String motherboard = "Motherboard";
+		String cpu = "CPU";
+		String ram = "Random Acces Memory";
+		String powerSuply = "PowerSuply";
+		String box = "Case";
+		
+		
+		System.out.print("Personal Computer have a " + box + ", it includes " + powerSuply + ",");
+		System.out.print( cpu + "," + motherboard + "," + " and " + ram);
+	}
+}
+
