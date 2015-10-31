@@ -1,0 +1,70 @@
+class GetSet {
+	
+	private int powerSuply;   
+	private int ram; 
+	
+	private String mainboard; 
+	private String videocard; 
+	
+	void powerSwitch(int state){  //state - состояние выключателя
+			if(state == 1){
+				System.out.println("Выключатель включен");
+			}
+			else{
+				System.out.println("Выключатель выключен");
+			}
+		}
+		
+	 @Override
+    public String toString()
+    {
+        return "Computer powered "+this.powerSuply+" Watt power supply, "+" it has "+this.ram+" Mb RAM "+ ", and also it buld on "+this.mainboard+" mainboard and videocard by "+this.videocard;
+    }
+	
+	public void setpowerSupply(int powerSuply){
+		this.powerSuply = powerSuply;
+	}
+	public int getpowerSupply()	{
+		return powerSuply;
+	}	
+	
+	public void setRam(int ram){
+		if(ram < 1 || ram > 100000){
+			System.out.println("You enter wrong RAM");
+		} else{			
+		this.ram = ram;
+		}
+	}
+	public int getRam()	{
+		return ram;
+	}	
+	
+	public void setMainboard(String mainboard){
+		this.mainboard = mainboard;
+	}
+	public String getMainboarrd()	{
+		return mainboard;
+	}	
+	
+	public void setVideocard(String videocard){
+		this.videocard = videocard;
+	}
+	public String getVideocard()	{
+		return videocard;
+	}
+	
+	public static void main(String[] args){
+		
+		GetSet myComp = new GetSet();
+		
+		myComp.setpowerSupply(300);
+		myComp.setRam(1024);
+		myComp.setMainboard("Asus");
+		myComp.setVideocard("MSI");
+		
+		System.out.println(myComp.getpowerSupply());
+		System.out.println(myComp.getRam());
+		System.out.println(myComp.getMainboarrd());
+		System.out.println(myComp.getVideocard());	
+	}
+}
