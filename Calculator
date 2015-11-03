@@ -1,0 +1,38 @@
+class Calculator{
+	
+	int x;
+	int y;
+
+		Calculator(int x, int y){
+			this.x = x;
+			this.y = y; 
+		}
+
+	public int getSum(){
+			int result = this.x + this.y;
+			return result;
+	}
+	
+	public void printResult(){
+		System.out.println(getSum());
+	}
+	
+	public void sqrtResult(){
+		
+		System.out.println(Math.sqrt(getSum()));	
+	}
+	
+	public void sinResult(){
+		System.out.println(Math.sin(getSum()));
+	}
+	
+	public static void main(String[] args){
+		
+		Calculator calc = new Calculator(3,4);
+		
+		calc.printResult();
+		calc.sqrtResult();
+		calc.sinResult();
+		
+	}
+}
