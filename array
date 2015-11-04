@@ -1,0 +1,61 @@
+class Calculator{
+	
+	int x;
+	int y;
+	int [] massive;//TASK 09
+	
+
+		Calculator(int x, int y){
+			this.x = x;
+			this.y = y; 
+		}
+		
+		Calculator(int [] massive){  //TASK 09
+			this.massive = massive;
+		}
+
+	public int getSum(){
+			int result = this.x + this.y;
+			return result;
+	}
+	
+	public void printResult(){
+		System.out.println(getSum());
+	}
+	
+	public void sqrtResult(){
+		
+		System.out.println(Math.sqrt(getSum()));	
+	}
+	
+	public void sinResult(){
+		System.out.println(Math.sin(getSum()));
+	}
+	
+	public void getMax(){				//TASK 09
+		int max = this.massive[0];
+		
+		for(int i : this.massive){
+			if(i > max){
+				max = i;
+			}
+		}
+		System.out.println(max);
+	}
+	
+	public static void main(String[] args){
+		
+		Calculator calc = new Calculator(3,4);
+		
+		int [] mas = {1,4,5,107,8,9,99,44,-4,66};//TASK 09
+		Calculator masive = new Calculator(mas);//TASK 09
+		
+		
+		calc.printResult();
+		calc.sqrtResult();
+		calc.sinResult();
+		masive.getMax();//TASK 09
+		
+		
+	}
+}
