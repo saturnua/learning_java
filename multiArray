@@ -1,8 +1,9 @@
+
 class Calculator{
 	
-	private int x;
-	private int y;
-	private int [] massive;
+	private int x;                   // наконец-то добавил private
+	private int y;			// наконец-то добавил private
+	private int [] massive;		// наконец-то добавил private
 	private String [][] resultTable; //TASK10
 
 		Calculator(int x, int y){
