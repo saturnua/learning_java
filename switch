@@ -1,0 +1,79 @@
+import java.util.Scanner;
+public class  sumSwitch {
+
+    public static int getOperation(String operation) {
+
+        int operationNumber = 0;
+
+        if (operation == null) {
+            return operationNumber;
+        }
+
+        switch (operation) {
+            case "+":
+                operationNumber = 1;
+                break;
+            case "-":
+                operationNumber = 2;
+                break;
+            case "/":
+                operationNumber = 3;
+                break;
+            case "*":
+                operationNumber = 4;
+                break;
+            
+            default: 
+                operationNumber = 0;
+                break;
+        }
+
+        return operationNumber;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+		
+		String operand1 = in.next();
+		String operation = in.next();
+		String operand2 = in.next();
+		
+		int typeOperation = getOperation(operation);
+	
+		switch(typeOperation) {
+			case 1: 
+				int res = Integer.parseInt(operand1) + Integer.parseInt(operand2);
+				System.out.println(res);
+				break;
+				
+			case 2: 
+				res = Integer.parseInt(operand1) - Integer.parseInt(operand2);
+				System.out.println(res);
+				break;
+				
+			case 3: 
+				if(Integer.parseInt(operand2) == 0){
+					System.out.println("Na nol delit nelzya");
+					break;
+				}
+				else{
+					res = Integer.parseInt(operand1) / Integer.parseInt(operand2);
+					System.out.println(res);
+					break;
+				}
+				
+			case 4: 
+				res = Integer.parseInt(operand1) * Integer.parseInt(operand2);
+				System.out.println(res);
+				break;	
+				
+			default: 
+                System.out.println("Fatal Error :)");
+                break;
+		}
+        
+
+        
+    }
+}
