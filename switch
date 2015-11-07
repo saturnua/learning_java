@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class  sumSwitch {
+public class  CalculatorWithSwitch {
 
     public static int getOperation(String operation) {
 
@@ -32,7 +32,9 @@ public class  sumSwitch {
     }
 
     public static void main(String[] args) {
-
+		
+		System.out.println("Vvedite dannie cherez probel v vide  __chislo1__ operation __chislo2__ Example: 10 + 23");
+		System.out.println();
         Scanner in = new Scanner(System.in);
 		
 		String operand1 = in.next();
@@ -44,12 +46,14 @@ public class  sumSwitch {
 		switch(typeOperation) {
 			case 1: 
 				int res = Integer.parseInt(operand1) + Integer.parseInt(operand2);
-				System.out.println(res);
+				System.out.println();
+				System.out.println(Integer.parseInt(operand1) + " + " + Integer.parseInt(operand2) + " = " + res);
 				break;
 				
 			case 2: 
 				res = Integer.parseInt(operand1) - Integer.parseInt(operand2);
-				System.out.println(res);
+				System.out.println();
+				System.out.println(Integer.parseInt(operand1) + " - " + Integer.parseInt(operand2) + " = " + res);
 				break;
 				
 			case 3: 
@@ -59,21 +63,21 @@ public class  sumSwitch {
 				}
 				else{
 					res = Integer.parseInt(operand1) / Integer.parseInt(operand2);
-					System.out.println(res);
+					System.out.println();
+					System.out.println(Integer.parseInt(operand1) + " / " + Integer.parseInt(operand2) + " = " + res);
 					break;
 				}
 				
 			case 4: 
 				res = Integer.parseInt(operand1) * Integer.parseInt(operand2);
-				System.out.println(res);
+				System.out.println();
+				System.out.println(Integer.parseInt(operand1) + " * " + Integer.parseInt(operand2) + " = " + res);
 				break;	
 				
 			default: 
                 System.out.println("Fatal Error :)");
                 break;
 		}
-        
-
-        
+           
     }
 }
