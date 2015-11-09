@@ -31,7 +31,7 @@ public class  CalculatorWithSwitch {
         return operationNumber;
     }
 	
-	public double getSum(double operand1, double operand2){
+    public double getSum(double operand1, double operand2){
 			double result = operand1 + operand2;
 			return result;
 	}
