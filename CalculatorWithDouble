@@ -31,6 +31,10 @@ public class  CalculatorWithSwitch {
         return operationNumber;
     }
 	
+	public double getSum(double operand1, double operand2){
+			double result = operand1 + operand2;
+			return result;
+	}
 
     public static void main(String[] args) {
 		
@@ -44,10 +48,12 @@ public class  CalculatorWithSwitch {
 		
 		int typeOperation = getOperation(operation);
 	
+		
 		switch(typeOperation) {
 			case 1: 
-				
-				double res = Double.parseDouble(operand1) + Double.parseDouble(operand2);
+			
+				CalculatorWithSwitch calcSum = new CalculatorWithSwitch();                                   //Создаем экземпляр класса
+				double res = calcSum.getSum(Double.parseDouble(operand1),Double.parseDouble(operand2));		//Вызываем метод getSum
 				
 				System.out.println();
 				if(operand1.contains(".") || operand2.contains(".")){
