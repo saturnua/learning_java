@@ -1,0 +1,40 @@
+mport java.io.*;
+import java.io.IOException;
+
+public class FileManager{
+	
+	public static void copyFileText() throws Exception{
+		
+		InputStream readFile = new FileInputStream("C:\\java\\first.txt");
+				
+		byte[] buffer = new byte[readFile.available()];
+		
+		readFile.read(buffer, 0, readFile.available());
+		 
+		System.out.println("File cotnent:");
+		
+		for(int i=0; i<buffer.length;i++){
+		 
+			System.out.print((char)buffer[i]);
+		}
+		
+		readFile.close();
+	
+	
+		OutputStream writeFile = new FileOutputStream("C:\\java\\second.txt");
+		
+		writeFile.write(buffer, 0, buffer.length);
+		
+		writeFile.close();
+		
+	
+	}
+	
+	public static void main(String[] args) throws Exception{
+		
+		FileManager.copyFileText();
+		
+	
+	}
+	
+}
