@@ -1,0 +1,97 @@
+import java.util.Scanner; 
+import java.io.*;
+import java.io.IOException;
+
+class WorkingComputer{
+	
+	int powerSuply;   
+	int ram; 
+	
+	String mainboard; 
+	String videocard; 
+	
+	WorkingComputer (int powerSuply,int ram, String mainboard,String videocard){
+		this.powerSuply = powerSuply;
+		this.ram = ram;
+		this.mainboard = mainboard;
+		this.videocard = videocard;	
+	}
+	
+	static void turnOn(){
+		System.out.println("--------------------------------------------------");
+		System.out.println("If you Want turn PC please enter 1, if not - 2 ");
+		Scanner sc = new Scanner(System.in);
+		
+		switch (sc.nextInt()) {
+            case 1:
+                System.out.println("-- PC is turning on");
+				installOS();
+                break;
+            case 2:
+                System.out.println("-- PC is turning off");
+                break;
+            default: 
+                System.out.println("You choise is wrong, please enter 1 or 2");
+				turnOn();
+                break;
+        }
+		
+	}
+	
+	static void installOS(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("--------------------------------------------------");
+		System.out.println(" If you Want install OS please enter 1, if not - 2 ");
+		
+		switch (sc.nextInt()) {
+            case 1:
+                System.out.println("-- OS installed successfully");
+				startOS();
+                break;
+            case 2:
+                System.out.println("-- PC is turning off");
+                break;
+            default: 
+                System.out.println("You choise is wrong, please enter 1 or 2");
+				installOS();
+                break;
+        }
+		
+	}
+	
+	static void startOS(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("--------------------------------------------------");
+		System.out.println(" If you Want start OS please enter 1, if not - 2 ");
+		
+		switch (sc.nextInt()) {
+            case 1:
+                System.out.println("-- OS started");
+                break;
+            case 2:
+                System.out.println("-- OS not started");
+				turnOn();
+                break;
+            default: 
+                System.out.println("You choise is wrong, please enter 1 or 2");
+				startOS();
+                break;
+        }
+	}
+	
+		
+	 @Override
+    public String toString()
+    {
+        return "Computer powered "+this.powerSuply+" Watt power supply, "+" it has "+this.ram+" Mb RAM "+ ", and also it buld on "+this.mainboard+" mainboard and videocard by "+this.videocard;
+    }
+	
+	
+	public static void main(String[] args){
+		
+		WorkingComputer.turnOn();
+		
+		
+		
+	}
+}
